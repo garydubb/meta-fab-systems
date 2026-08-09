@@ -2,8 +2,10 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://metafabsyste
 
 export const siteName = "MetaFab Systems";
 
+export const homeTitle = "Steel Fabrication & Engineering in Ludhiana | MetaFab Systems";
+
 export const defaultDescription =
-  "MetaFab Systems is an engineering and fabrication partner in Ludhiana, Punjab, delivering CAD design, structural steel, custom gates & railing, industrial machines, and installation under one roof.";
+  "Steel fabrication and engineering company in Ludhiana, Punjab. CAD design, structural steel, custom gates & railing, and industrial machines. Get a free quote.";
 
 export const defaultKeywords = [
   "steel fabrication Ludhiana",

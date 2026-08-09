@@ -5,7 +5,7 @@ import { ConfigProvider } from "antd";
 import { MainLayout } from "@/components/templates";
 import { SmoothScroll } from "@/components/atoms";
 import { antdTheme } from "@/lib/theme/antd-theme";
-import { siteUrl, siteName, defaultDescription, defaultKeywords } from "@/lib/seo";
+import { siteUrl, siteName, homeTitle, defaultDescription, defaultKeywords } from "@/lib/seo";
 import "./globals.css";
 
 const questrial = Questrial({
@@ -23,7 +23,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | Design, Engineer, Fabricate`,
+    default: homeTitle,
     template: `%s | ${siteName}`,
   },
   description: defaultDescription,

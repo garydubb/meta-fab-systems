@@ -83,6 +83,20 @@ h6,
   letter-spacing: 0.01em;
 }
 
+/* Generic hover-interactive card — lift + orange border glow.
+   The one hover treatment for cards site-wide; see .trust-badge-card
+   for the dark-content-adjacent variant with the same timing/easing. */
+.interactive-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.interactive-card:hover,
+.interactive-card:focus-within {
+  border-color: rgba(241, 90, 36, 0.5);
+  box-shadow: 0 12px 24px rgba(10, 10, 10, 0.08);
+  transform: translateY(-4px);
+}
+
 .trust-badge-card {
   border-radius: 16px;
   border: 1px solid #e5e5e5;

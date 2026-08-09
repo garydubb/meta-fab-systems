@@ -1,7 +1,8 @@
 export const siteInfo = {
 	name: "MetaFab Systems",
 	tagline: ["Designing Strength", "Fabricating Excellence"],
-	subheading: "Complete Engineering & Fabrication Solutions Under One Roof",
+	subheading:
+		"Complete engineering & fabrication solutions under one roof — proudly serving Ludhiana, Punjab and beyond.",
 	heroKicker: "From Concept to Creation, We Build Your Vision",
 	motto: "Committed to Building a Stronger Tomorrow",
 };

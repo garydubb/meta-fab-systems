@@ -19,9 +19,9 @@ export default function ContactTemplate() {
 			>
 				<Container size="narrow" vertical align="center" gap="small">
 					<SectionBadge>Contact Us</SectionBadge>
-					<Title level={1}>Let&apos;s Build Something</Title>
+					<Title level={1}>Contact Our Ludhiana Fabrication Team</Title>
 					<Paragraph style={{ fontSize: 18 }}>
-						Reach out with your project details and our team will follow up with a plan and pricing.
+						Reach out with your project details and our team in Ludhiana, Punjab will follow up with a plan and pricing.
 					</Paragraph>
 				</Container>
 			</BackgroundSection>

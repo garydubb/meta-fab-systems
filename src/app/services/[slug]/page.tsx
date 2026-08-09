@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = detailedServices.find((s) => s.slug === slug);
 
   if (!service) {
-    return { title: "Service | MetaFab Systems" };
+    return { title: { absolute: "Service | MetaFab Systems" } };
   }
 
   return {
-    title: `${service.title} | MetaFab Systems`,
+    title: { absolute: `${service.title} | MetaFab Systems` },
     description: service.description,
   };
 }

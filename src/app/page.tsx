@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { LocalBusinessJsonLd } from "next-seo";
 import { HomeTemplate } from "@/components/templates";
-import { contact, siteInfo } from "@/lib/content";
-import { siteUrl, siteName, defaultDescription, defaultKeywords } from "@/lib/seo";
+import { contact } from "@/lib/content";
+import { siteUrl, siteName, homeTitle, defaultDescription, defaultKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: `${siteInfo.name} | ${siteInfo.tagline.join(", ")}`,
+  title: { absolute: homeTitle },
   description: defaultDescription,
   keywords: defaultKeywords,
   alternates: {
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: `${siteInfo.name} | ${siteInfo.tagline.join(", ")}`,
+    title: homeTitle,
     description: defaultDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteInfo.name} | ${siteInfo.tagline.join(", ")}`,
+    title: homeTitle,
     description: defaultDescription,
   },
 };

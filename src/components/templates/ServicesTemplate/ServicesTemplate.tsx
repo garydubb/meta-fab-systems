@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { Typography, Row, Col, Button, Grid } from "antd";
 import { ArrowRight } from "lucide-react";
-import { SectionBadge, Section, Container, BackgroundSection } from "@/components/atoms";
+import {
+	SectionBadge,
+	Section,
+	Container,
+	BackgroundSection,
+} from "@/components/atoms";
 import { ServiceCard } from "@/components/molecules";
 import { Logos } from "@/components/organisms";
 import { detailedServices, servicesIntro } from "@/lib/content";
@@ -20,16 +25,23 @@ export default function ServicesTemplate() {
 		<>
 			<BackgroundSection
 				image="/images/services/hero-bg.png"
-				style={{ paddingBlock: py, textAlign: "center" }}
+				style={{
+					paddingBlock: py,
+					textAlign: "center",
+					marginBottom: 32,
+				}}
 			>
 				<Container size="narrow" vertical align="center" gap="small">
 					<SectionBadge>Our Services</SectionBadge>
-					<Title level={1}>What We Build</Title>
+					<Title level={1}>
+						Steel Fabrication & Engineering Services
+					</Title>
 					<Paragraph style={{ fontSize: 18 }}>
 						{servicesIntro}
 					</Paragraph>
 				</Container>
 			</BackgroundSection>
+			<Logos />
 
 			<Section style={{ paddingBlock: py }}>
 				<Container>
@@ -53,8 +65,6 @@ export default function ServicesTemplate() {
 					</Row>
 				</Container>
 			</Section>
-
-			<Logos />
 
 			<Section
 				bg="light"
