@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Typography, Row, Col, Button, Grid } from "antd";
 import { ArrowRight } from "lucide-react";
 import { SectionBadge, Section, Container, BackgroundSection } from "@/components/atoms";
@@ -35,16 +36,18 @@ export default function ServicesTemplate() {
 					<Row gutter={[24, 24]}>
 						{detailedServices.map((service) => (
 							<Col key={service.title} xs={24} sm={12} lg={6}>
-								<ServiceCard
-									title={service.title}
-									icon={service.icon}
-									description={service.description}
-									software={
-										"software" in service
-											? service.software
-											: undefined
-									}
-								/>
+								<Link href={`/services/${service.slug}`}>
+									<ServiceCard
+										title={service.title}
+										icon={service.icon}
+										description={service.description}
+										software={
+											"software" in service
+												? service.software
+												: undefined
+										}
+									/>
+								</Link>
 							</Col>
 						))}
 					</Row>
@@ -68,7 +71,7 @@ export default function ServicesTemplate() {
 						Tell us what you&apos;re building and we&apos;ll put
 						together a plan and pricing.
 					</Paragraph>
-					<a href="/#contact">
+					<a href="/contact">
 						<Button
 							type="primary"
 							size="large"

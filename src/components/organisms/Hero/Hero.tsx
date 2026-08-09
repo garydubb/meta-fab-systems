@@ -42,7 +42,7 @@ export default function Hero() {
                 {siteInfo.subheading}
               </Paragraph>
               <Space size="middle" wrap>
-                <a href="#contact">
+                <a href="/contact">
                   <Button
                     type="primary"
                     size="large"

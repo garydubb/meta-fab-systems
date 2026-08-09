@@ -5,7 +5,7 @@ import Lenis from "lenis";
 import { setLenis } from "@/lib/lenis";
 
 // Owns the whole page's scroll physics. Also re-wires in-page anchor links
-// (nav's #services/#gallery/#contact hrefs) through Lenis's own scrollTo —
+// (nav's #services/#gallery hrefs) through Lenis's own scrollTo —
 // Lenis intercepts the wheel/touch scroll loop, so the browser's native
 // hash-jump no longer fires on its own once this is mounted.
 export default function SmoothScroll() {

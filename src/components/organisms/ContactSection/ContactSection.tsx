@@ -14,7 +14,7 @@ export default function ContactSection() {
   const screens = useBreakpoint();
 
   return (
-    <Section id="contact" bg="light" style={{ paddingBlock: screens.sm ? 96 : 64 }}>
+    <Section bg="light" style={{ paddingBlock: screens.sm ? 96 : 64 }}>
       <Container>
         <Row gutter={[48, 48]}>
           <Col xs={24} lg={12}>

@@ -4,6 +4,8 @@ export { default as ServicesSection } from "./ServicesSection";
 export { default as Logos } from "./Logos";
 export { default as GallerySection } from "./GallerySection";
 export { default as TrustBadgesSection } from "./TrustBadgesSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as ContactCtaSection } from "./ContactCtaSection";
 export { default as MaterialsStrip } from "./MaterialsStrip";
 export { default as ContactSection } from "./ContactSection";
 export { default as SiteFooter } from "./SiteFooter";

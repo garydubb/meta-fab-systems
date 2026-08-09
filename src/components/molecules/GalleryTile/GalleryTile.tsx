@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Typography, Flex } from "antd";
+import { ArrowUpRight } from "lucide-react";
 import { getLenis } from "@/lib/lenis";
 
 const { Text } = Typography;
@@ -52,7 +53,7 @@ export default function GalleryTile({ label, image }: GalleryTileProps) {
   }, []);
 
   return (
-    <Flex ref={tileRef} className="gallery-tile">
+    <Flex ref={tileRef} className="gallery-tile" tabIndex={0}>
       <Flex ref={imageWrapRef} className="gallery-tile-image-wrap">
         <Image
           src={image}
@@ -63,7 +64,12 @@ export default function GalleryTile({ label, image }: GalleryTileProps) {
         />
       </Flex>
       <Flex className="gallery-tile-overlay" />
-      <Text className="gallery-tile-label">{label}</Text>
+      <Flex className="gallery-tile-label">
+        <Text style={{ color: "#ffffff" }}>{label}</Text>
+        <Flex className="gallery-tile-arrow">
+          <ArrowUpRight size={16} />
+        </Flex>
+      </Flex>
     </Flex>
   );
 }

@@ -20,8 +20,10 @@ export default function GallerySection() {
           <Title level={2} style={{ color: colors.black }}>
             From Concept to Creation
           </Title>
-          <Paragraph style={{ margin: "0 auto", maxWidth: 576, fontSize: 14, color: colors.neutral500 }}>
-            Stock photography shown for now — swap in real project photos once available.
+          <Paragraph style={{ margin: "0 auto", maxWidth: 640, fontSize: 14, color: colors.neutral500 }}>
+            A look at the range of structures, machines, and fixtures we design and build for our clients — from
+            structural steelwork and custom gates to precision machines and furniture, engineered and fabricated
+            to spec from first drawing to final install.
           </Paragraph>
         </Flex>
 

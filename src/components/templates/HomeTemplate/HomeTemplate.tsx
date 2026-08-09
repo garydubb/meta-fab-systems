@@ -5,7 +5,8 @@ import {
   ServicesSection,
   GallerySection,
   TrustBadgesSection,
-  ContactSection,
+  FaqSection,
+  ContactCtaSection,
 } from "@/components/organisms";
 
 export default function HomeTemplate() {
@@ -15,7 +16,8 @@ export default function HomeTemplate() {
       <ServicesSection />
       <GallerySection />
       <TrustBadgesSection />
-      <ContactSection />
+      <FaqSection />
+      <ContactCtaSection />
     </>
   );
 }

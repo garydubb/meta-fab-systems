@@ -19,3 +19,32 @@ export const galleryItems = [
   { label: "School Tables & Furniture", image: "/images/gallery/school-tables-furniture.jpg" },
   { label: "Custom Fabrication", image: "/images/gallery/custom-fabrication.jpg" },
 ] as const;
+
+// Placeholder copy — expand with real, frequently-asked questions once provided.
+export const faqs = [
+  {
+    question: "What industries do you work with?",
+    answer:
+      "We fabricate for a range of industries, including construction, industrial manufacturing, education, and commercial fit-outs — from structural steelwork to custom furniture and machine parts.",
+  },
+  {
+    question: "Do you handle both design and fabrication?",
+    answer:
+      "Yes. Our team covers the full process in-house, from CAD design and 3D modelling through to fabrication, installation, and erection on site.",
+  },
+  {
+    question: "Can you work from our own drawings or specs?",
+    answer:
+      "Absolutely. Send us your drawings, specs, or reference photos and we'll quote against them directly, or help refine them before fabrication begins.",
+  },
+  {
+    question: "What materials can you work with?",
+    answer:
+      "We regularly work with mild steel, stainless steel, aluminium, and other structural metals — let us know your project's requirements and we'll advise on the best fit.",
+  },
+  {
+    question: "How long does a typical project take?",
+    answer:
+      "Timelines vary with scope and complexity. After reviewing your project details we'll give you a realistic delivery plan alongside your quote.",
+  },
+] as const;

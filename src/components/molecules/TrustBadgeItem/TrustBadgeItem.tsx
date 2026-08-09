@@ -18,17 +18,29 @@ export default function TrustBadgeItem({ title, icon }: TrustBadgeItemProps) {
 
   return (
     <Flex
+      vertical
       align="center"
       gap="middle"
-      vertical={!row}
-      style={{ textAlign: row ? "left" : "center" }}
+      className="trust-badge-card"
+      style={{ textAlign: "center", height: "100%", padding: row ? 32 : 24 }}
     >
-      <IconTile icon={icon} size="lg" />
+      <Flex
+        align="center"
+        justify="center"
+        style={{
+          width: 64,
+          height: 64,
+          borderRadius: "50%",
+          backgroundColor: colors.orangeSoft,
+        }}
+      >
+        <IconTile icon={icon} size="lg" />
+      </Flex>
       <Text
         style={{
           fontFamily: "var(--font-heading)",
           fontSize: row ? 16 : 14,
-          color: colors.white,
+          color: colors.black,
         }}
       >
         {title}
