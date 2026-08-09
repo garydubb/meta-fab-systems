@@ -1,0 +1,9 @@
+export { default as SiteHeader } from "./SiteHeader";
+export { default as Hero } from "./Hero";
+export { default as ServicesSection } from "./ServicesSection";
+export { default as Logos } from "./Logos";
+export { default as GallerySection } from "./GallerySection";
+export { default as TrustBadgesSection } from "./TrustBadgesSection";
+export { default as MaterialsStrip } from "./MaterialsStrip";
+export { default as ContactSection } from "./ContactSection";
+export { default as SiteFooter } from "./SiteFooter";

@@ -1,0 +1,15 @@
+export const colors = {
+  black: "#0a0a0a",
+  ink: "#171717",
+  orange: "#f15a24",
+  orangeDark: "#d94a15",
+  orangeSoft: "rgba(241, 90, 36, 0.1)",
+  orangeBorder: "rgba(241, 90, 36, 0.3)",
+  white: "#ffffff",
+  neutral50: "#fafafa",
+  neutral200: "#e5e5e5",
+  neutral300: "#d4d4d4",
+  neutral500: "#737373",
+  neutral600: "#525252",
+  neutral800: "#262626",
+} as const;

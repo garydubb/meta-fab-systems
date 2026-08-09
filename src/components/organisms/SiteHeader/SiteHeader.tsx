@@ -1,0 +1,50 @@
+"use client";
+
+import { Layout, Button, Flex, Grid } from "antd";
+import { Phone } from "lucide-react";
+import { Container, Logo } from "@/components/atoms";
+import { NavMenu, MobileNavDrawer } from "@/components/molecules";
+import { contact } from "@/lib/content";
+import { colors } from "@/lib/theme/colors";
+
+const { Header } = Layout;
+const { useBreakpoint } = Grid;
+
+export default function SiteHeader() {
+  const screens = useBreakpoint();
+
+  return (
+    <Header
+      style={{
+        backgroundColor: colors.white,
+        borderBottom: `1px solid ${colors.neutral200}`,
+      }}
+    >
+      <Container vertical={false} align="center" justify="between" gap="middle">
+        <Logo />
+
+        {screens.md && (
+          <Flex style={{ flex: 1 }}>
+            <NavMenu />
+          </Flex>
+        )}
+
+        <a href={`tel:${contact.officePhone.replace(/\s/g, "")}`}>
+          {screens.sm ? (
+            <Button type="primary" icon={<Phone style={{ height: 16, width: 16 }} />}>
+              {contact.officePhone}
+            </Button>
+          ) : (
+            <Button
+              type="primary"
+              icon={<Phone style={{ height: 16, width: 16 }} />}
+              shape="circle"
+            />
+          )}
+        </a>
+
+        <MobileNavDrawer />
+      </Container>
+    </Header>
+  );
+}
