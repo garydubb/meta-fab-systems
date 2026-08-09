@@ -2,12 +2,13 @@
 
 These are the conventions actually in use across the site (`globals.css`, `Reveal`, `GalleryTile`). Follow them when adding new motion instead of inventing new timing/easing values — consistency matters more than any single value being "more correct."
 
-## 1. Two motion categories, nothing else
+## 1. Three motion categories, nothing else
 
 - **Hover / focus micro-interactions** — instant feedback on interactive elements (cards, tiles, buttons).
 - **Scroll-triggered reveal** — one-shot fade+slide when content enters the viewport (`Reveal` atom).
+- **Preloader** — a one-time loading state on hard page loads only (`Preloader` atom). See §5.
 
-Don't add a third category (looping/ambient animation, autoplay carousels, parallax beyond the gallery) without checking with the team first — it's easy for an industrial/engineering brand to tip into feeling gimmicky.
+Don't add a fourth category (looping/ambient background animation, autoplay carousels, parallax beyond the gallery) without checking with the team first — it's easy for an industrial/engineering brand to tip into feeling gimmicky.
 
 ## 2. Hover / focus interactions
 
@@ -52,7 +53,17 @@ opacity 0 → 1, translateY(24px) → 0, over 600ms ease
 
 `GalleryTile` drives an image's vertical offset from Lenis scroll position (`getLenis()`), capped at `MAX_OFFSET_PERCENT = 12`. This is the only scroll-linked (as opposed to scroll-triggered) effect on the site. Don't reach for scroll-linked transforms elsewhere without a specific reason — they're more expensive to get right (jank, reduced-motion, SSR) than a `Reveal`.
 
-## 5. Defaults when in doubt
+## 5. Preloader
+
+`Preloader` (mounted once in `app/layout.tsx`, alongside `SmoothScroll`) is the only looping animation on the site, and it's scoped deliberately narrow:
+
+- **Fires once per hard page load, not per route.** It lives in the root layout, which persists across client-side `<Link>` navigation in the App Router — so it shows on a fresh browser load/refresh, never when clicking between pages.
+- **Minimum visible time of 500ms**, then fades out over 500ms once `window.load` fires — long enough to avoid a jarring flash on fast loads, short enough not to feel like a fake gate.
+- Ring spinner (`preloader-spin`, 0.9s linear infinite) + sweep bar (`preloader-sweep`, 1.1s ease-in-out infinite) around the `MF` mark, on the brand black background.
+- Looping animation is normally off-limits per §1 — this is the one sanctioned exception, because it's bounded (always ends, never idles indefinitely) and scoped to a single moment (initial load) rather than being ambient/background motion during use.
+- Respects `prefers-reduced-motion: reduce` by disabling the spin/sweep keyframes (`@media (prefers-reduced-motion: reduce)` in `globals.css`) — the overlay still shows/fades on the same timing, just without the animation.
+
+## 6. Defaults when in doubt
 
 | Situation | Duration | Easing | Property |
 |---|---|---|---|

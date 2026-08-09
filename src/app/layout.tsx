@@ -3,7 +3,7 @@ import { Questrial, DM_Sans } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
 import { MainLayout } from "@/components/templates";
-import { SmoothScroll } from "@/components/atoms";
+import { SmoothScroll, Preloader } from "@/components/atoms";
 import { antdTheme } from "@/lib/theme/antd-theme";
 import { siteUrl, siteName, homeTitle, defaultDescription, defaultKeywords } from "@/lib/seo";
 import "./globals.css";
@@ -53,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${questrial.variable} ${dmSans.variable}`}>
       <body>
+        <Preloader />
         <SmoothScroll />
         <AntdRegistry>
           <ConfigProvider theme={antdTheme}>
