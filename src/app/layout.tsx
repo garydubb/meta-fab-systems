@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd";
 import { MainLayout } from "@/components/templates";
 import { SmoothScroll } from "@/components/atoms";
 import { antdTheme } from "@/lib/theme/antd-theme";
+import { siteUrl, siteName, defaultDescription, defaultKeywords } from "@/lib/seo";
 import "./globals.css";
 
 const questrial = Questrial({
@@ -20,9 +21,32 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MetaFab Systems | Design, Engineer, Fabricate",
-  description:
-    "Complete engineering & fabrication solutions under one roof — CAD design, structural steel, custom gates & railing, industrial machines, and more.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${siteName} | Design, Engineer, Fabricate`,
+    template: `%s | ${siteName}`,
+  },
+  description: defaultDescription,
+  keywords: defaultKeywords,
+  authors: [{ name: siteName }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName,
+    locale: "en_US",
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

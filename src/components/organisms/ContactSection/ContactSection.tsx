@@ -38,7 +38,6 @@ export default function ContactSection() {
               <ContactInfoItem
                 icon="MessageCircle"
                 lines={[contact.personalPhone]}
-                label={contact.personalPhoneLabel}
               />
               <ContactInfoItem icon="MapPin" lines={contact.address} />
             </Flex>
