@@ -30,9 +30,10 @@ export default function MaterialsStrip() {
 			>
 				<Flex
 					align="center"
+					justify={row ? "flex-start" : "center"}
 					gap="small"
 					wrap
-					style={{ justifyContent: row ? "flex-start" : "center" }}
+					style={row ? undefined : { width: "100%" }}
 				>
 					<Text
 						strong
@@ -63,14 +64,16 @@ export default function MaterialsStrip() {
 
 				<Flex
 					align="center"
+					justify={row ? "flex-start" : "center"}
 					gap="small"
+					wrap
 					style={
 						row
 							? {
 									paddingLeft: 20,
 									borderLeft: `1px solid ${colors.neutral200}`,
 								}
-							: undefined
+							: { width: "100%", textAlign: "center" }
 					}
 				>
 					<ShieldCheck

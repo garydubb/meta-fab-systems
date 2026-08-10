@@ -42,6 +42,7 @@ export default function SiteFooter() {
         </Flex>
 
         <Flex
+          justify="center"
           style={{
             marginTop: 32,
             borderTop: `1px solid ${colors.neutral800}`,

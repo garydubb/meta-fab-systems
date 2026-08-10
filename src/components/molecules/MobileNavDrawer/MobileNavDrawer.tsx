@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Drawer, Menu, Button, Grid } from "antd";
-import { Menu as MenuIcon } from "lucide-react";
-import { navLinks } from "@/lib/content";
+import { Drawer, Menu, Button, Flex, Grid } from "antd";
+import { Menu as MenuIcon, Phone } from "lucide-react";
+import { Logo } from "@/components/atoms";
+import { navLinks, contact } from "@/lib/content";
 
 const { useBreakpoint } = Grid;
 
@@ -19,6 +20,7 @@ export default function MobileNavDrawer() {
         {link.label}
       </Link>
     ),
+    style: { fontSize: 16 },
   }));
 
   if (screens.md) return null;
@@ -27,17 +29,34 @@ export default function MobileNavDrawer() {
     <>
       <Button
         type="text"
-        icon={<MenuIcon style={{ height: 20, width: 20 }} />}
+        size="large"
+        icon={<MenuIcon style={{ height: 22, width: 22 }} />}
         onClick={() => setOpen(true)}
         aria-label="Open menu"
+        style={{ height: 44, width: 44 }}
       />
       <Drawer
-        title="Menu"
+        title={<Logo />}
         placement="right"
+        width={300}
+        closable={{ placement: "end" }}
         onClose={() => setOpen(false)}
         open={open}
       >
-        <Menu mode="vertical" items={items} selectable={false} />
+        <Flex vertical justify="space-between" style={{ height: "100%" }}>
+          <Menu mode="vertical" items={items} selectable={false} style={{ border: 0 }} />
+
+          <a href={`tel:${contact.officePhone.replace(/\s/g, "")}`}>
+            <Button
+              type="primary"
+              size="large"
+              block
+              icon={<Phone style={{ height: 16, width: 16 }} />}
+            >
+              Call {contact.officePhone}
+            </Button>
+          </a>
+        </Flex>
       </Drawer>
     </>
   );

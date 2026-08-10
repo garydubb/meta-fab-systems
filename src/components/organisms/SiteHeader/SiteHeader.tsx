@@ -16,11 +16,14 @@ export default function SiteHeader() {
   return (
     <Header
       style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
         backgroundColor: colors.white,
         borderBottom: `1px solid ${colors.neutral200}`,
       }}
     >
-      <Container vertical={false} align="center" justify="between" gap="middle">
+      <Container vertical={false} align="center" justify="space-between" gap="middle">
         <Logo />
 
         {screens.md && (
@@ -29,21 +32,26 @@ export default function SiteHeader() {
           </Flex>
         )}
 
-        <a href={`tel:${contact.officePhone.replace(/\s/g, "")}`}>
-          {screens.sm ? (
-            <Button type="primary" icon={<Phone style={{ height: 16, width: 16 }} />}>
-              {contact.officePhone}
-            </Button>
-          ) : (
-            <Button
-              type="primary"
-              icon={<Phone style={{ height: 16, width: 16 }} />}
-              shape="circle"
-            />
-          )}
-        </a>
+        <Flex align="center" gap="small">
+          <a href={`tel:${contact.officePhone.replace(/\s/g, "")}`}>
+            {screens.sm ? (
+              <Button type="primary" icon={<Phone style={{ height: 16, width: 16 }} />}>
+                {contact.officePhone}
+              </Button>
+            ) : (
+              <Button
+                type="primary"
+                size="large"
+                icon={<Phone style={{ height: 18, width: 18 }} />}
+                shape="circle"
+                aria-label={`Call ${contact.officePhone}`}
+                style={{ height: 44, width: 44 }}
+              />
+            )}
+          </a>
 
-        <MobileNavDrawer />
+          <MobileNavDrawer />
+        </Flex>
       </Container>
     </Header>
   );
