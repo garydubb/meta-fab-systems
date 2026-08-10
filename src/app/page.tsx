@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { LocalBusinessJsonLd } from "next-seo";
+import { LocalBusinessJsonLd, FAQJsonLd } from "next-seo";
 import { HomeTemplate } from "@/components/templates";
-import { contact } from "@/lib/content";
+import { contact, faqs } from "@/lib/content";
 import { siteUrl, siteName, homeTitle, defaultDescription, defaultKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -41,6 +41,12 @@ export default function Home() {
           postalCode: "141014",
           addressCountry: "IN",
         }}
+      />
+      <FAQJsonLd
+        questions={faqs.map((faq) => ({
+          question: faq.question,
+          answer: faq.answer,
+        }))}
       />
       <HomeTemplate />
     </>
