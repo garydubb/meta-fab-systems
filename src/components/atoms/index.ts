@@ -7,3 +7,4 @@ export { default as BackgroundSection } from "./BackgroundSection";
 export { default as SmoothScroll } from "./SmoothScroll";
 export { default as Reveal } from "./Reveal";
 export { default as Preloader } from "./Preloader";
+export { default as SocialIcon } from "./SocialIcon";

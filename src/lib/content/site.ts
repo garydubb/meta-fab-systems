@@ -36,6 +36,14 @@ export const materials = [
 	"Copper",
 ] as const;
 
+// Placeholder — swap in the real profile URLs once provided.
+export const socialLinks = [
+	{ platform: "Facebook", href: "#" },
+	{ platform: "Instagram", href: "#" },
+	{ platform: "LinkedIn", href: "#" },
+	{ platform: "YouTube", href: "#" },
+] as const;
+
 export const navLinks = [
 	{ label: "Home", href: "/" },
 	{ label: "Services", href: "/services" },
