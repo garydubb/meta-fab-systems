@@ -57,6 +57,7 @@ export default function Preloader() {
       <Flex vertical align="center" gap="middle">
         <Flex align="center" justify="center" className="preloader-ring">
           <Text
+            className="preloader-badge"
             style={{
               display: "flex",
               height: 48,

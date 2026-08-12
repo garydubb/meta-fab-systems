@@ -16,22 +16,31 @@ export default function Logo({ inverted = false }: LogoProps) {
 
   return (
     <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-      <Text
-        style={{
-          display: "flex",
-          height: 40,
-          width: 40,
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: 6,
-          fontFamily: "var(--font-heading)",
-          fontSize: 18,
-          backgroundColor: inverted ? colors.white : colors.black,
-          color: inverted ? colors.black : colors.white,
-        }}
+      <svg
+        width={40}
+        height={40}
+        viewBox="0 0 40 40"
+        aria-hidden
+        style={{ flexShrink: 0 }}
       >
-        MF
-      </Text>
+        <rect
+          width={40}
+          height={40}
+          rx={4}
+          fill={inverted ? colors.white : colors.black}
+        />
+        <text
+          x="50%"
+          y="50%"
+          dy="0.35em"
+          textAnchor="middle"
+          fontFamily="var(--font-heading)"
+          fontSize={18}
+          fill={inverted ? colors.black : colors.white}
+        >
+          MF
+        </text>
+      </svg>
       <Text
         style={{
           fontFamily: "var(--font-heading)",

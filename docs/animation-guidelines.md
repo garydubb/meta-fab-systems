@@ -59,7 +59,7 @@ opacity 0 → 1, translateY(24px) → 0, over 600ms ease
 
 - **Fires once per hard page load, not per route.** It lives in the root layout, which persists across client-side `<Link>` navigation in the App Router — so it shows on a fresh browser load/refresh, never when clicking between pages.
 - **Minimum visible time of 500ms**, then fades out over 500ms once `window.load` fires — long enough to avoid a jarring flash on fast loads, short enough not to feel like a fake gate.
-- Ring spinner (`preloader-spin`, 0.9s linear infinite) + sweep bar (`preloader-sweep`, 1.1s ease-in-out infinite) around the `MF` mark, on the brand black background.
+- Ring spinner (`preloader-spin`, 0.7s linear infinite) + sweep bar (`preloader-sweep`, 1.1s ease-in-out infinite) + a pulsing `MF` badge (`preloader-pulse`, 1.2s ease-in-out infinite — scale + fading glow ring) on the brand black background.
 - Looping animation is normally off-limits per §1 — this is the one sanctioned exception, because it's bounded (always ends, never idles indefinitely) and scoped to a single moment (initial load) rather than being ambient/background motion during use.
 - Respects `prefers-reduced-motion: reduce` by disabling the spin/sweep keyframes (`@media (prefers-reduced-motion: reduce)` in `globals.css`) — the overlay still shows/fades on the same timing, just without the animation.
 
