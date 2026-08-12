@@ -2,7 +2,7 @@
 export const aboutIntro = {
   kicker: "About MetaFab Systems",
   title: "Your Partner in Engineering & Fabrication",
-  body: "We help businesses, builders, and institutions bring structural and mechanical ideas to life through precise CAD design, industrial fabrication, and on-site installation — all delivered from our workshop in Ludhiana, Punjab.",
+  body: "We design, fabricate, and install structural and mechanical work from a single workshop in Ludhiana, Punjab.",
 };
 
 export const vision =
