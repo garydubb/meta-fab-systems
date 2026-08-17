@@ -36,12 +36,9 @@ export const materials = [
 	"Copper",
 ] as const;
 
-// Placeholder — swap in the real profile URLs once provided.
 export const socialLinks = [
-	{ platform: "Facebook", href: "#" },
-	{ platform: "Instagram", href: "#" },
-	{ platform: "LinkedIn", href: "#" },
-	{ platform: "YouTube", href: "#" },
+	{ platform: "Facebook", href: "https://www.facebook.com/metafabsystems" },
+	{ platform: "Instagram", href: "https://www.instagram.com/metafab_systems" },
 ] as const;
 
 export const navLinks = [

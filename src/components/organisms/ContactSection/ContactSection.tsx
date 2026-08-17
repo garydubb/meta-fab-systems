@@ -1,6 +1,7 @@
 "use client";
 
-import { Typography, Row, Col, Card, Form, Input, Button, Flex, Grid } from "antd";
+import { useState } from "react";
+import { Typography, Row, Col, Card, Form, Input, Button, Flex, Grid, message } from "antd";
 import { SectionBadge, Section, Container } from "@/components/atoms";
 import { ContactInfoItem } from "@/components/molecules";
 import { contact } from "@/lib/content";
@@ -10,8 +11,40 @@ const { Title, Paragraph } = Typography;
 const { TextArea } = Input;
 const { useBreakpoint } = Grid;
 
+type ContactFormValues = {
+  name: string;
+  phone: string;
+  email: string;
+  message?: string;
+};
+
 export default function ContactSection() {
   const screens = useBreakpoint();
+  const [form] = Form.useForm<ContactFormValues>();
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(values: ContactFormValues) {
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      message.success("Thanks — we'll be in touch shortly.");
+      form.resetFields();
+    } catch (err) {
+      message.error(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <Section bg="light" style={{ paddingBlock: screens.sm ? 96 : 64 }}>
@@ -45,7 +78,7 @@ export default function ContactSection() {
 
           <Col xs={24} lg={12}>
             <Card>
-              <Form layout="vertical" requiredMark={false}>
+              <Form form={form} layout="vertical" requiredMark={false} onFinish={handleSubmit}>
                 <Flex vertical gap="middle">
                   <Row gutter={16}>
                     <Col xs={24} sm={12}>
@@ -81,7 +114,7 @@ export default function ContactSection() {
                     <TextArea rows={4} />
                   </Form.Item>
                   <Form.Item>
-                    <Button type="primary" htmlType="submit" size="large" block>
+                    <Button type="primary" htmlType="submit" size="large" block loading={submitting}>
                       Send Request
                     </Button>
                   </Form.Item>

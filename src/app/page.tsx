@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LocalBusinessJsonLd, FAQJsonLd } from "next-seo";
 import { HomeTemplate } from "@/components/templates";
-import { contact, faqs } from "@/lib/content";
+import { contact, faqs, socialLinks } from "@/lib/content";
 import { siteUrl, siteName, homeTitle, defaultDescription, defaultKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -41,6 +41,7 @@ export default function Home() {
           postalCode: "141014",
           addressCountry: "IN",
         }}
+        sameAs={socialLinks.map((social) => social.href)}
       />
       <FAQJsonLd
         questions={faqs.map((faq) => ({
